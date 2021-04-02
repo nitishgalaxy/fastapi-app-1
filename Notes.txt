@@ -1,0 +1,5 @@
+FastAPI Features:
+
+1. Automatic documentation - Swagger UI
+    - Postman not needed.
+
