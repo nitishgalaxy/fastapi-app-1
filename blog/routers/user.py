@@ -6,9 +6,12 @@ from fastapi import Depends, status
 from hashing import Hash
 
 
-router = APIRouter(tags=['users'])
+router = APIRouter(
+    prefix='/user',
+    tags=['users']
+)
 
-@router.post('/user', response_model=schemas.ShowUser)
+@router.post('/', response_model=schemas.ShowUser)
 def create_user(request : schemas.User, db: Session = Depends(database.get_db)):
     hashed_password = Hash.bcrypt(request.password)
     new_user = models.User(name=request.name, email=request.email, password=hashed_password)
@@ -18,7 +21,7 @@ def create_user(request : schemas.User, db: Session = Depends(database.get_db)):
     return new_user
 
 
-@router.get('/user/{id}', status_code=status.HTTP_200_OK, response_model=schemas.ShowUser)
+@router.get('/{id}', status_code=status.HTTP_200_OK, response_model=schemas.ShowUser)
 def get_user(id, response: Response,db: Session = Depends(database.get_db)):
     user = db.query(models.User).filter(models.User.id == id).first()
     if not user:
