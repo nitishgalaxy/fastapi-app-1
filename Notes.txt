@@ -322,3 +322,11 @@ from passlib.context import CryptContext
 pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 hashed_password = pwd_cxt.hash(request.password)
+
+
+========================================================
+
+Using Doc Tags 
+
+Group APIs in Swagger UI 
+
