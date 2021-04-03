@@ -6,6 +6,9 @@ https://www.youtube.com/watch?v=7t2alSnE2-I
 https://github.com/bitfumes/fastapi-course
 
 
+Python standards:  https://github.com/davedoesdev/python-jwt/blob/master/Makefile
+
+
 FastAPI Features:
 ------------------------
 
@@ -369,6 +372,9 @@ class ShowBlog(BaseModel):
 
 ======================================================================
 
-API Router 
+Authentication
+
+
+pip install python-jose 
 
 
