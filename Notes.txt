@@ -367,3 +367,8 @@ class ShowBlog(BaseModel):
         orm_mode = True  
 
 
+======================================================================
+
+API Router 
+
+
