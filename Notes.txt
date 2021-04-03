@@ -304,7 +304,7 @@ db: Session = Depends(get_db)
 
 Response Model :
 
-For SQLAlchemy Models... we call them models.
-For Pydantic Models... we call them schemas.
+SQLAlchemy Models... we call them models.
+Pydantic Models... we call them schemas.
 
 
