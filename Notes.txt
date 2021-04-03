@@ -291,6 +291,14 @@ Base = declarative_base()
 
 
 
+========================================================
+
+db: Session = Depends(get_db)
+
+- Session is not a Pydantic thing.
+- Depends() converts the Session into pydantic.
+
+
 
 
 
