@@ -308,3 +308,17 @@ SQLAlchemy Models... we call them models.
 Pydantic Models... we call them schemas.
 
 
+========================================================
+
+Password Hashing
+
+
+pip install passlib
+pip install bcrypt
+
+
+from passlib.context import CryptContext
+
+pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+hashed_password = pwd_cxt.hash(request.password)
