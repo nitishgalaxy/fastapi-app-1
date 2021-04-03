@@ -330,3 +330,40 @@ Using Doc Tags
 
 Group APIs in Swagger UI 
 
+
+========================================================
+
+Schema Relationships 
+
+
+models.py 
+--------------
+
+class Blog(Base):
+    user_id = Column(Integer, ForeignKey('users.id'))   # Add foreign key 
+
+    creator = relationship("User", back_populates="blogs")  # Add relationship 
+
+
+
+class User(Base):
+    id = Column(Integer, primary_key=True, index=True)   # Primary Key
+
+    blogs = relationship('Blog', back_populates="creator")  # Add relationship
+    
+
+-------------------------------------------------------------
+
+Show the User Data (relationship) in Blogs response
+
+schemas.py 
+----------------
+
+class ShowBlog(BaseModel):
+    title: str 
+    body: str
+    creator: ShowUser 
+    class Config:
+        orm_mode = True  
+
+
